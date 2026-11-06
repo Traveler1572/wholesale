@@ -7,5 +7,5 @@ if (PHP_SAPI !== 'cli') {
     session_name($config['session_name']);
     session_set_cookie_params(['httponly' => true, 'samesite' => 'Lax', 'secure' => !empty($_SERVER['HTTPS']) !== 'off', 'path' => '/']);
     session_start();
-}
+} else { $_SESSION = []; }
 ?>
