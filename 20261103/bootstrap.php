@@ -13,4 +13,7 @@ header('X-Frame-Options: DENY');
 header('Referrer-Policy: same-origin');
 header("Content-Security-Policy: default-src 'self'; style-src 'self'; script-src 'self'; img-src 'self' data:; frame-ancestors 'none'; form-action 'self'");
 header('Cache-Control: no-store');
+set_exception_handler(function(Throwable $e): void {
+    
+});
 ?>
