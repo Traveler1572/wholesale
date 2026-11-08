@@ -15,5 +15,6 @@ header("Content-Security-Policy: default-src 'self'; style-src 'self'; script-sr
 header('Cache-Control: no-store');
 set_exception_handler(function(Throwable $e): void {
     error_log((string)$e);
+    if (PHP_SAPI === 'cli') { fwrite(STDERR, $e->getMessage() . PHP_EOL); exit(1); }
 });
 ?>
