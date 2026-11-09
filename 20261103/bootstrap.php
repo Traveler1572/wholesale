@@ -17,5 +17,6 @@ set_exception_handler(function(Throwable $e): void {
     error_log((string)$e);
     if (PHP_SAPI === 'cli') { fwrite(STDERR, $e->getMessage() . PHP_EOL); exit(1); 
     http_response_code(500);}
+    echo '<!doctype html><html lang="ja"><meta charset="utf-8"><title>処理エラー</title><h1>処理を完了できませんでした。</h1><p>DB接続設定・初期化状態とPHPエラーログを確認してください。</p></html>';
 });
 ?>
