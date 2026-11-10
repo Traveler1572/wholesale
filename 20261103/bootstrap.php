@@ -20,6 +20,7 @@ set_exception_handler(function(Throwable $e): void {
     echo '<!doctype html><html lang="ja"><meta charset="utf-8"><title>処理エラー</title><h1>処理を完了できませんでした。</h1><p>DB接続設定・初期化状態とPHPエラーログを確認してください。</p></html>';
 });
 function db(): PDO {
-    
+    global $config;
+    static $db;
 }
 ?>
