@@ -21,6 +21,11 @@ set_exception_handler(function(Throwable $e): void {
 });
 function db(): PDO {
     global $config;
-    static $db;
+    static $pdo;
+    if (!$pdo) {
+        $pdo = new PDO("mysql:host={$config['db_host']};port={$config['db_port']};dbname={$config['db_name']};charset=utf8mb4", $config['db_user'], $config['db_password'], [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC, PDO::ATTR_EMULATE_PREPARES => false]);
+        $pdo->exec("SET time_zone = '+09:00'");
+    }
+    return $pdo;
 }
 ?>
