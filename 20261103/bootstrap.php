@@ -28,4 +28,5 @@ function db(): PDO {
     }
     return $pdo;
 }
+function query (string $sql, array $params = []): PDOStatement { $s = db()->prepare($sql); $s->execute($params); return $s; }
 ?>
