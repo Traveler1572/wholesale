@@ -30,4 +30,5 @@ function db(): PDO {
 }
 function query (string $sql, array $params = []): PDOStatement { $s = db()->prepare($sql); $s->execute($params); return $s; }
 function rows(string $sql, array $params = []): array { return query($sql, $params)->fetchAll(); }
+function row(string $sql, array $params = []): array { return query($sql, $params)->fetch() ?: []; }
 ?>
