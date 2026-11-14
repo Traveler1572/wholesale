@@ -33,4 +33,5 @@ function rows(string $sql, array $params = []): array { return query($sql, $para
 function row(string $sql, array $params = []): array { return query($sql, $params)->fetch() ?: []; }
 function e($value): string { return htmlspecialchars((string)$value, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8'); }
 function url(string $path): string { global $config; return rtrim($config['base_path'], '/') . '/' . ltrim($path, '/'); }
+function redirect(string $path): void { header('Location: ' . url($path)); exit; }
 ?>
