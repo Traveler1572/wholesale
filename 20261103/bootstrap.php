@@ -34,4 +34,5 @@ function row(string $sql, array $params = []): array { return query($sql, $param
 function e($value): string { return htmlspecialchars((string)$value, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8'); }
 function url(string $path): string { global $config; return rtrim($config['base_path'], '/') . '/' . ltrim($path, '/'); }
 function redirect(string $path): void { header('Location: ' . url($path)); exit; }
+function csrf(): string { return $_SESSION['csrf'] ??= bin2hex(random_bytes(32)); }
 ?>
