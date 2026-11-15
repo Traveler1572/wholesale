@@ -35,4 +35,5 @@ function e($value): string { return htmlspecialchars((string)$value, ENT_QUOTES 
 function url(string $path): string { global $config; return rtrim($config['base_path'], '/') . '/' . ltrim($path, '/'); }
 function redirect(string $path): void { header('Location: ' . url($path)); exit; }
 function csrf(): string { return $_SESSION['csrf'] ??= bin2hex(random_bytes(32)); }
+function csrfInput(): string { return '<input type="hidden" name="csrf" value="' . e(csrf()) . '">'; }
 ?>
