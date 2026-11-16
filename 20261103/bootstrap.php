@@ -36,4 +36,5 @@ function url(string $path): string { global $config; return rtrim($config['base_
 function redirect(string $path): void { header('Location: ' . url($path)); exit; }
 function csrf(): string { return $_SESSION['csrf'] ??= bin2hex(random_bytes(32)); }
 function csrfInput(): string { return '<input type="hidden" name="csrf" value="' . e(csrf()) . '">'; }
+function checkCsrf(): void { if (!hash_equals(csrf(), (string)($_POST['csrf'] ?? ''))) { http_response_code(403); exit('操作の有効期限が切れました。画面を再読み込みしてください。'); } }
 ?>
