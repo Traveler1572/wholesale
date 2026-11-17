@@ -39,4 +39,5 @@ function csrfInput(): string { return '<input type="hidden" name="csrf" value="'
 function checkCsrf(): void { if (!hash_equals(csrf(), (string)($_POST['csrf'] ?? ''))) { http_response_code(403); exit('操作の有効期限が切れました。画面を再読み込みしてください。'); } }
 function requireLogin(): void { if (empty($_SESSION['user'])) redirect('/app/login.php'); }
 function flash(string $message, string $type = 'success'): void { $_SESSION['flash'] = [$message, $type]; }
+function money($value): string { return '¥' . number_format((float)$value); }
 ?>
