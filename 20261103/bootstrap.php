@@ -41,6 +41,8 @@ function requireLogin(): void { if (empty($_SESSION['user'])) redirect('/app/log
 function flash(string $message, string $type = 'success'): void { $_SESSION['flash'] = [$message, $type]; }
 function money($value): string { return '¥' . number_format((float)$value); }
 function positiveInt($value, string $label, int $max = 1000000): int {
-    
+    $n = filter_var($value, FILTER_VALIDATE_INT);
+    if ($n === false || $n < 1 || $n > $max) throw new DomainException($label . 'は1～' . $max . '以下の整数で入力してください。');
+    return $n;
 }
 ?>
