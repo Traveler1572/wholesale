@@ -40,4 +40,7 @@ function checkCsrf(): void { if (!hash_equals(csrf(), (string)($_POST['csrf'] ??
 function requireLogin(): void { if (empty($_SESSION['user'])) redirect('/app/login.php'); }
 function flash(string $message, string $type = 'success'): void { $_SESSION['flash'] = [$message, $type]; }
 function money($value): string { return '¥' . number_format((float)$value); }
+function positiveInt($value, string $label, int $max = 1000000): int {
+    
+}
 ?>
