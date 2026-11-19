@@ -45,4 +45,7 @@ function positiveInt($value, string $label, int $max = 1000000): int {
     if ($n === false || $n < 1 || $n > $max) throw new DomainException($label . 'は1～' . $max . '以下の整数で入力してください。');
     return $n;
 }
+function validDate(string $date): string {
+    
+}
 ?>
