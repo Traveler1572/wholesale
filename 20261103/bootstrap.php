@@ -46,6 +46,6 @@ function positiveInt($value, string $label, int $max = 1000000): int {
     return $n;
 }
 function validDate(string $date): string {
-    
+    $d = DateTimeImmutable::createFromFormat('!Y-m-d', $date);
 }
 ?>
