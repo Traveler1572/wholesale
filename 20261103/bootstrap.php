@@ -50,4 +50,7 @@ function validDate(string $date): string {
     if (!$d || $d->format('Y-m-d') !== $date) throw new DomainException('日付が正しくありません。');
     return $date;
 }
+function badge(string $status): string {
+    
+}
 ?>
