@@ -47,5 +47,7 @@ function positiveInt($value, string $label, int $max = 1000000): int {
 }
 function validDate(string $date): string {
     $d = DateTimeImmutable::createFromFormat('!Y-m-d', $date);
+    if (!$d || $d->format('Y-m-d') !== $date) throw new DomainException('日付が正しくありません。');
+    return $date;
 }
 ?>
