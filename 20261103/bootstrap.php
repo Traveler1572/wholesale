@@ -52,5 +52,6 @@ function validDate(string $date): string {
 }
 function badge(string $status): string {
     $labels = ['new'=>'未引当','allocated'=>'引当済','shipped'=>'出荷済','unbilled'=>'未請求','issued'=>'発行済','exported'=>'連携済','success'=>'正常終了','failed'=>'異常終了','open'=>'未対応','investigating'=>'調査中','resolved'=>'解決済'];
+    return '<span class="badge ' . e($status) . '">' . e($labels[$status] ?? $status) . '</span>';
 }
 ?>
