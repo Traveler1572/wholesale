@@ -55,6 +55,6 @@ function badge(string $status): string {
     return '<span class="badge ' . e($status) . '">' . e($labels[$status] ?? $status) . '</span>';
 }
 function actionForm(string $action, string $label, array $fields = [], string $class = 'primary'): string {
-    
+    $html = '<form method="post" class="inline">' . csrfInput() . '<input type="hidden" name="action" value="' . e($action) . '">';
 }
 ?>
