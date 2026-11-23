@@ -56,5 +56,7 @@ function badge(string $status): string {
 }
 function actionForm(string $action, string $label, array $fields = [], string $class = 'primary'): string {
     $html = '<form method="post" class="inline">' . csrfInput() . '<input type="hidden" name="action" value="' . e($action) . '">';
+    foreach ($fields as $k => $v) $html .= '<input type="hidden" name="' . e($k) . '" value="' . e($v) . '">';
+    }
 }
 ?>
