@@ -60,6 +60,6 @@ function actionForm(string $action, string $label, array $fields = [], string $c
     return $html . '<button class="' . e($class) . '">' . e($label) . '</button></form>';
     }
 function pageStart(string $title, string $section): void {
-    
+    $nav = ['dashboard'=>['/app/dashboard.php','概要','01'], 'orders'=>['/orders/order_list.php','受注管理','02'],
 }
 ?>
