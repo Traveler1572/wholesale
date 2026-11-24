@@ -59,4 +59,7 @@ function actionForm(string $action, string $label, array $fields = [], string $c
     foreach ($fields as $k => $v) $html .= '<input type="hidden" name="' . e($k) . '" value="' . e($v) . '">';
     return $html . '<button class="' . e($class) . '">' . e($label) . '</button></form>';
     }
+function pageStart(string $title, string $section): void {
+    
+}
 ?>
