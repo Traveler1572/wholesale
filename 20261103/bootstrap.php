@@ -61,5 +61,6 @@ function actionForm(string $action, string $label, array $fields = [], string $c
     }
 function pageStart(string $title, string $section): void {
     $nav = ['dashboard'=>['/app/dashboard.php','概要','01'], 'orders'=>['/orders/order_list.php','受注管理','02'],
+    'stock'=>['/stock/stock_list.php','在庫一覧','03'], 'allocation'=>['/stock/allocation_status.php','引当状況','04'],
 }
 ?>
