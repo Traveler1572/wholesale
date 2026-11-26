@@ -64,5 +64,7 @@ function pageStart(string $title, string $section): void {
     'stock'=>['/stock/stock_list.php','在庫一覧','03'], 'allocation'=>['/stock/allocation_status.php','引当状況','04'],
     'shipping'=>['shipping/shipment_list.php','出荷管理','05'], 'sales'=>['/sales/sale_list.php','売上管理','06'],
     'billing'=>['/billing/invoice_list.php','請求管理','07'], 'batch'=>['/batch/batch_history.php','バッチ履歴','08'],
+    'incident'=>['/incident/incident_list.php','障害管理','09'],
+    ];
 }
 ?>
