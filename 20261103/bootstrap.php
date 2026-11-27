@@ -66,5 +66,6 @@ function pageStart(string $title, string $section): void {
     'billing'=>['/billing/invoice_list.php','請求管理','07'], 'batch'=>['/batch/batch_history.php','バッチ履歴','08'],
     'incident'=>['/incident/incident_list.php','障害管理','09'],
     ];
+    echo '<!doctype html><html lang="ja">'
 }
 ?>
