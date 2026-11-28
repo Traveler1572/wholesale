@@ -66,6 +66,8 @@ function pageStart(string $title, string $section): void {
     'billing'=>['/billing/invoice_list.php','請求管理','07'], 'batch'=>['/batch/batch_history.php','バッチ履歴','08'],
     'incident'=>['/incident/incident_list.php','障害管理','09'],
     ];
-    echo '<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">'
+    echo '<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>' . e($title) . ' | MINATO Wholesale</title>
+        <link rel="stylesheet" href="' . e(url('/assets/style.css')) . '">
 }
 ?>
